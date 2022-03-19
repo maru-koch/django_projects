@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+    {% block page_title %}
+        Monthly Challenges
+    {% endblock %}
+
+    {% block css_link %}
+        <link rel="stylesheet" href="{% static "challenges/index.css" %}"/>
+         <link rel="stylesheet" href="{% static "challenges/includes/header.css" %}"/>
+    {% endblock %}
+
+    {% block content %}
+        {% include "./includes/header.html" with activePage="index" %}
+        <ul>
+            {% for month in month_list%}
+            
+                {% comment %} It is poor practice to hardcode url as below {% endcomment %}
+                {% comment %} <li ><a href="/Challenges/{{ month }}">{{month}}</a></li> {% endcomment %}
+                {% comment %} instead we use the url tag to dynamic generate url {% endcomment %}
+                
+                <li ><a href="{% url "monthly_challenge" month %}">{{month | title }}</a></li>
+
+                {% comment %} month_challege is the name of the url a sdefined in the app urlpatterns {% endcomment %}
+                {% comment %} the url name must be enclosed by a quote {%  endcomment %}
+
+            {% endfor %}
+    </ul>
+
+    {% endblock %}
+    

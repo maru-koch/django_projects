@@ -1,0 +1,35 @@
+
+ul{
+    width: 500px;
+    background-color: #ccc;
+    border-radius: 10px;
+    box-shadow: 2px 3px 5px rgba(0,0,0,0.4);
+    padding: 1rem;
+    text-align: center;
+}
+
+li{
+    font-size: 1.5rem;
+    border-bottom: 1px solid #fff;
+    list-style: none;
+    padding: 1rem;
+    font-family: inherit;
+  
+   
+}
+
+li:last-of-type{
+    border-bottom: none;
+}
+
+li:hover, li:active{
+    color: #45f
+}
+
+
+
+li a{
+    text-decoration: none;
+   
+
+}

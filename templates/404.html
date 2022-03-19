@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+
+    404 Error 
+
+{% endblock %}
+
+{% block content %}
+
+    {% include "./includes/header.html" with activePage = "Page not exist" %}
+
+    Page not found
+
+{% endblock %}
