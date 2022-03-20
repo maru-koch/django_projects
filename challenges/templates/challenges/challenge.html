@@ -3,6 +3,7 @@
 
     {% block css_link %}
         <link rel="stylesheet" href="{% static "challenges/challenges.css" %}"/>
+        <link rel="stylesheet" href="{% static "challenges/includes/header.css" %}"/>
     {% endblock %}
 
     {% block page_title %}
@@ -13,12 +14,16 @@
 
         {% include "challenges/includes/header.html" with activePage="challenge" %}
 
-        <h1> {{ month | title }}'s challenge </h1>
+        <div class = "container">
 
-        {% if text is not None %}
-            <h3>{{ text }}</h3>   
-        {% else %}
-            <p> No Challenge added for this month</p>
-        {% endif %} 
+            <h1> {{ month | title }}'s challenge </h1>
+
+            {% if text is not None %}
+                <h3 class = "text">{{ text }}</h3>   
+            {% else %}
+                <p class = "text"> No Challenge added for this month</p>
+            {% endif %} 
+
+        </div>
 
     {% endblock %}
